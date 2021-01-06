@@ -10,7 +10,8 @@
   </head>
 
   <body>
-    <%= render 'devise/shared/notice' if notice %>
+    <%= render "devise/shared/navbar" %>
+    <%= render "devise/shared/notice" if notice %>
     <%= yield %>
   </body>
 </html>

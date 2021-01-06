@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_105020) do
+ActiveRecord::Schema.define(version: 2021_01_04_091434) do
+
+  create_table "boards", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_boards_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,9 +36,13 @@ ActiveRecord::Schema.define(version: 2020_12_28_105020) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "google_uid"
+    t.string "google_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["fb_uid"], name: "index_users_on_fb_uid"
+    t.index ["google_uid"], name: "index_users_on_google_uid"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "boards", "users"
 end

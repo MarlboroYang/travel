@@ -27,9 +27,11 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'devise'
-gem 'omniauth-facebook'
-gem "figaro"
+gem 'devise'  #會員系統
+gem 'omniauth-facebook' #臉書
+gem "figaro" #密碼保護
+gem 'aasm' #狀態機
+gem 'omniauth-google-oauth2' #google
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

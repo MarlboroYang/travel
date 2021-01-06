@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.1.1)
+      concurrent-ruby (~> 1.0)
     actioncable (6.0.3.4)
       actionpack (= 6.0.3.4)
       nio4r (~> 2.0)
@@ -130,6 +132,11 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (8.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-google-oauth2 (0.8.1)
+      jwt (>= 2.0)
+      oauth2 (~> 1.1)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.6)
     omniauth-oauth2 (1.7.0)
       oauth2 (~> 1.4)
       omniauth (~> 1.9)
@@ -237,6 +244,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -246,6 +254,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   omniauth-facebook
+  omniauth-google-oauth2
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   sass-rails (>= 6)
