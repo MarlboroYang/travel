@@ -308,6 +308,11 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  config.omniauth :facebook, ENV["facebook_app_id"], ENV["facebook_app_key"], :scope => 'public_profile,email', :info_fields => 'email,name', callback_url: "http://localhost:3000/users/auth/facebook/callback"
-  config.omniauth :google_oauth2, ENV["google_app_id"], ENV["google_app_kdy"],{access_type: "offline", approval_prompt: ""}
+  # config.omniauth :facebook, ENV["facebook_app_id"], ENV["facebook_app_key"], :scope => 'public_profile,email', :info_fields => 'email,name', callback_url: "http://localhost:3000/users/auth/facebook/callback", method: :post
+  # config.omniauth :google_oauth2, ENV["google_app_id"], ENV["google_app_kdy"], { :skip_jwt => true }
+  config.omniauth :facebook, ENV['facebook_app_id'], ENV['facebook_app_key'], scope: 'public_profile,email', info_fields: 'email,name', callback_url: "#{ENV['HOST']}/users/auth/facebook/callback"
+
+  config.omniauth :google_oauth2, ENV['google_app_id'], ENV['google_app_kdy'], scope: 'email', redirect_uri: "#{ENV['HOST']}/users/auth/google_oauth2/callback"
+
+  OmniAuth.config.logger = Rails.logger if Rails.env.development? # debug用
 end
