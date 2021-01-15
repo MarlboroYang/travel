@@ -36,6 +36,8 @@ gem 'aasm', '~> 5.1', '>= 5.1.1' #狀態機
 gem 'pundit', '~> 2.1'  #使用者權限工具
 gem 'kaminari', '~> 0.17.0' #分頁工具
 gem 'hirb', '~> 0.7.3'
+gem 'friendly_id', '~> 5.4', '>= 5.4.2' #網址美化
+gem 'babosa', '~> 1.0', '>= 1.0.4' #網址中文化
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
