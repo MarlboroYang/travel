@@ -34,6 +34,8 @@ gem 'omniauth-facebook', '~> 8.0' #臉書
 gem 'figaro', '~> 1.2' #密碼保護
 gem 'aasm', '~> 5.1', '>= 5.1.1' #狀態機
 gem 'pundit', '~> 2.1'  #使用者權限工具
+gem 'kaminari', '~> 0.17.0' #分頁工具
+gem 'hirb', '~> 0.7.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get '/user' => "boards#index", :as => :user_root
   end
 
-  root 'welcome#index'
+  root 'boards#index'
 
   resources :boards do
     member do
